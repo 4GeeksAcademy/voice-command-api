@@ -333,8 +333,9 @@ async function submitManualTranscription(rawValue: string): Promise<void> {
     render()
 
     const payload = await postManualTranscription(transcription)
-    state.transcription = payload.transcription
     appendUserAndAssistantMessages(payload.transcription, payload.instruction, payload.result)
+    state.transcription = ''
+    transcriptionInput.value = ''
     state.microphoneState = 'Manual command completed successfully.'
   } catch (error) {
     registerFailure(toErrorMessage(error))
