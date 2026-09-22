@@ -1,4 +1,5 @@
-from fastapi import APIRouter, HTTPException, Request, UploadFile, status
+from fastapi import APIRouter, HTTPException, Request, status
+from starlette.datastructures import UploadFile
 from groq import Groq
 from pydantic import ValidationError
 
